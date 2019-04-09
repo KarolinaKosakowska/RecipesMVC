@@ -57,14 +57,19 @@ namespace RecipesMVC
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            //app.UseHttpsRedirection();
+            app.UseStaticFiles();//cssy, js, obrazki
             app.UseCookiePolicy();
 
             app.UseAuthentication();
 
-            app.UseMvc(routes =>
+            app.UseMvc(routes =>//sciezki dostepu
             {
+                //routes.MapRoute(
+                //    name: "test",
+                //    template: "oAplikacji",
+                //    defaults:  new {controller="Home"},{action="About"});
+                //    );
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
