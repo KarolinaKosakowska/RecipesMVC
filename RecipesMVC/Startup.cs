@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using RecipesMVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authorization;
+using Domain.Repositories;
+using Domain.IRepositories;
 
 namespace RecipesMVC
 {
@@ -41,6 +44,7 @@ namespace RecipesMVC
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient <IRecipesRepo,RecipesRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

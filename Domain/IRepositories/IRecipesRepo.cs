@@ -2,15 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Domain.IRepositories
 {
-    interface IRecipesRepo
+     public interface IRecipesRepo
     {
-        RecipesDTO Add(RecipesDTO item);
-        bool Update(RecipesDTO item);
-        bool Delete(RecipesDTO item);
-        RecipesDTO Get(int id);
-        List<RecipesDTO> GetList();
+        Task <RecipesDTO> Add(RecipesDTO item);
+        Task <bool> Update(RecipesDTO item);
+        Task <bool> Delete(int id);
+        Task <RecipesDTO> Get(int id);
+        Task <List<RecipesDTO>> GetList();
     }
 }
