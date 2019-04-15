@@ -8,14 +8,15 @@ using Microsoft.EntityFrameworkCore;
 using Domain.Models.DTO;
 using RecipesMVC.Data;
 using Domain.Repositories;
+using Domain.IRepositories;
 
 namespace RecipesMVC.Controllers
 {
     public class RecipesController : Controller
     {
-        private readonly RecipesRepo recipesRepo;
+        private readonly IRecipesRepo recipesRepo;
 
-        public RecipesController(RecipesRepo recipesRepo)
+        public RecipesController(IRecipesRepo recipesRepo)
         {
             this.recipesRepo = recipesRepo;
         }

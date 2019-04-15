@@ -16,7 +16,8 @@ namespace Domain.Repositories
         const string RecipesUri = "Recipes";
         public RecipesRepo()
         {
-            client.BaseAddress = new Uri("http://localhost:12033/api/");
+            client.BaseAddress = new Uri("http://localhost:10596/api/");
+            client.BaseAddress = new Uri("https://recipeapikursnet.azurewebsites.net/api/");
             client.DefaultRequestHeaders
                 .Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("api-key", "aaa");
