@@ -21,7 +21,7 @@
         @foreach (var item in Model)
         {
             string body =item.Body.Length>21 ? item.Body.Substring(0, 20): item.Body;
-            <tr>
+            <tr id="row_@item.ID">
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
@@ -37,7 +37,7 @@
                 <td class="col-lg-6">
                     <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn btn-primary">Edytuj</a> 
                     <a asp-action="Details" asp-route-id="@item.ID"class="btn btn-info">Szczegóły</a> 
-                    <button id="btnDelete_@item.ID" class="btn btn-danger" onclick="showPopup(@item.ID)">Usuń</button>
+                    <button id="btnDelete_@item.ID" class="btn btn-danger" onclick="showPopup(@item.ID,'Recpies')">Usuń</button>
                 </td>
             </tr>
         }

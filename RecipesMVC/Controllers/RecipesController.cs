@@ -165,5 +165,21 @@ namespace RecipesMVC.Controllers
             await recipesRepo.Delete(id);
             return RedirectToAction(nameof(Index));
         }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteRow(int id)
+        {
+            try
+            {
+                await recipesRepo.Delete(id);
+                return Content("OK");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+                //throw;
+            }
+
+            
+        }
     }
 }
